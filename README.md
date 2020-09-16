@@ -52,3 +52,7 @@ for example:
 ~~~
 bash extractRegion.sh NC_011672.1-741709 TDNAscan-master/${construct_name}tdnascan/1.TDNA_sort.bam TDNAscan-master/${construct_name}tdnascan/3.${construct_name}tdnascan_informativeGenome_sort.bam
 ~~~
+
+For each insertion identify if gene of interest is present. The genes can be found in Genomes/Constructs/probes
+
+Compare number of insertions with the number of copies identified in the Southern Blot experiment (southernBlot.txt)
