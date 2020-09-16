@@ -1,5 +1,5 @@
 # TruncatedAnalysis
-Program to analyze insertion locations of construct in foregin genome
+Program to analyze insertion locations of construct in foreign genome
 
 ## Required Programs
 * samtools 1.9
@@ -28,7 +28,7 @@ Program to analyze insertion locations of construct in foregin genome
 ### How to run analysis
 The directory running runner.sh must include:
 1. Fasta file for the current analysis construct. This could be generated from the .cm5 SnapGene file in Genomes/Constructs
-2. Fasta file for algae (copy or point to Genomes/Phaeodactylum_tricornutum.fna)
+2. Fasta file for algae (copy or point from Genomes/Phaeodactylum_tricornutum.fna)
 3. Paired end sequencing data after QC and trimming (if needed)
 4. Bed file for endogenous regions on the construct. This should be manually made from the table above, and named as ${construct_name}.regions.bed. For example: 527.regions.bed <br />
 
@@ -39,7 +39,16 @@ The directory running runner.sh must include:
 | 527 | 2475 | 2719 | FCPB/LHCF4_promoter     |
 | 527 | 3095 | 3336 | FCPA-terminator         |
 
-Example for running runner.sh:  <br />
+Example for running runner.sh on 523 construct:  <br />
 ~~~
 bash runner.sh 523 Phaeodactylum_tricornutum R1.fq.gz R2.fq.gz
+~~~
+
+### Results
+Start by verifying insertion regions listed in TDNAscan-master/${construct_name}tdnascan/5.${construct_name}tdnascan_insertion.bed do not fall on endogenous regions
+
+Manually go over results in TDNAscan-master/${construct_name}tdnascan/3.${construct_name}tdnascan_informativeGenome_IR.txt and identify regions of possible insertion by comparing the reads aligned on the algae to the reads aligned to the construct. This could be achieved by running extractRegion.sh to produce bam file aligned to the construct for reads originated in specific region on the algae genome
+for example:
+~~~
+bash extractRegion.sh NC_011672.1-741709 TDNAscan-master/${construct_name}tdnascan/1.TDNA_sort.bam TDNAscan-master/${construct_name}tdnascan/3.${construct_name}tdnascan_informativeGenome_sort.bam
 ~~~
