@@ -40,6 +40,6 @@ The directory running runner.sh must include:
 | 527 | 3095 | 3336 | FCPA-terminator         |
 
 Example for running runner.sh:  <br />
-'''
+~~~
 bash runner.sh 523 Phaeodactylum_tricornutum R1.fq.gz R2.fq.gz
-'''
+~~~
