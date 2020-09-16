@@ -30,7 +30,7 @@ The directory running runner.sh must include:
 1. Fasta file for the current analysis construct. This could be generated from the .cm5 SnapGene file in Genomes/Constructs
 2. Fasta file for algae (copy or point to Genomes/Phaeodactylum_tricornutum.fna)
 3. Paired end sequencing data after QC and trimming (if needed)
-4. Bed file for endogenous regions on the construct. This should be manually made from the table above, and named as ${construct_name}.regions.bed. For example: 527.regions.bed <br /> 
+4. Bed file for endogenous regions on the construct. This should be manually made from the table above, and named as ${construct_name}.regions.bed. For example: 527.regions.bed <br />
 
 | 527 | 902  | 1342 | FCPA/LHCF4/CLP_promoter |
 |-----|------|------|-------------------------|
@@ -38,3 +38,8 @@ The directory running runner.sh must include:
 | 527 | 2145 | 2474 | FCPA-terminator         |
 | 527 | 2475 | 2719 | FCPB/LHCF4_promoter     |
 | 527 | 3095 | 3336 | FCPA-terminator         |
+
+Example for running runner.sh:  <br />
+'''
+bash runner.sh 523 Phaeodactylum_tricornutum R1.fq.gz R2.fq.gz
+'''
