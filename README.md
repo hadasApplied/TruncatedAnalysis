@@ -1,5 +1,5 @@
 # TruncatedAnalysis
-Program to analyze insertion locations of construct in foreign genome
+Pipeline to analyze insertion locations of construct in foreign genome
 
 ## Required Programs
 * samtools 1.9
